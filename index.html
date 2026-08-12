@@ -699,7 +699,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getDatabase, collection, doc, setDoc, updateDoc, onSnapshot, deleteDoc, getDocs, getDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, doc, setDoc, updateDoc, onSnapshot, deleteDoc, getDocs, getDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // --- GLOBAL ENGINE STATE ---
         let p1 = null;
@@ -734,7 +734,7 @@
             
             app = initializeApp(firebaseConfig);
             auth = getAuth(app);
-            db = getDatabase(app);
+            db = getFirestore(app);
             
             const initAuth = async () => {
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
